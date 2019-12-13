@@ -2,6 +2,22 @@
 
 <h3>@ViewBag.jobs.Count Result(s)</h3>
 
-@{ 
-    // TODO #3 - Use the same list display from Views/Search/Index.cshtml 
+@{
+    // TODO #3 - Use the same list display from Views/Search/Index.cshtml
+
+    <table>
+        @foreach (var job in ViewBag.jobs)
+        {
+            @* class="@( i % 2 == 0 ? "even" : "odd" ) "*@
+            @foreach (KeyValuePair<string, string> item in job)
+            {
+                <tr>
+                    <td> @item.Key </td>
+                    <td> @item.Value </td>
+                </tr>
+            }
+        }
+
+    </table>
+
 }
